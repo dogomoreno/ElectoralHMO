@@ -1,7 +1,7 @@
 rm(list = ls())
 
 if(!require('pacman')) install.packages('pacman')
-pacman::p_load(flexdashboard, ggtext, janitor, tidyverse, extrafont, scales, patchwork, 'Cairo', htmlwidgets, tint, rgdal, rgeos, miniUI, units, lubridate, zoo, leaflet, htmltools, readxl, data.table, plotly)
+pacman::p_load(ggtext, tidyverse, extrafont, scales, 'Cairo')
 
 # TEMA DEL GRÁFICO
 
