@@ -43,12 +43,12 @@ popup <- paste0(
 
 mapaseccgob <- leaflet(capa_secc) %>% 
   addProviderTiles(providers$OpenStreetMap.Mapnik) %>%
-  # addLayersControl( 
-  #   baseGroups = c("VENTAJA EN SECCIÓN"), 
-  #   options = layersControlOptions(collapsed = TRUE, position = "topleft")) %>% 
+   addLayersControl( 
+     baseGroups = c("ELECCIÓN A GOBERNADOR"), 
+    options = layersControlOptions(collapsed = FALSE, position = "topright")) %>% 
   addPolygons(data= capa_secc,
               stroke= TRUE,
-              weight=0.2,                   
+              weight=0.5,                   
               opacity=1,
               fillColor = ~incipal(capa_secc$CLASF),
               color= "white",
@@ -68,7 +68,7 @@ mapaseccgob <- leaflet(capa_secc) %>%
                                             "border-color" = "rgba(0,0,0,0.5)"
                                           )),
               group= "VENTAJA EN SECCIÓN") %>%
-  addLegend(position = "topright", pal = incipal, values = ~capa_secc$CLASF, opacity=1, group= "VENTAJA EN SECCIÓN", 
+  addLegend(position = "topright", pal = incipal, values = ~capa_secc$CLASF, opacity=1, group= "ELECCIÓN A GOBERNADOR", 
             labFormat = function(type, cuts, p) {  
               paste0(labs)} ,
             title = "VENTAJA EN SECCIÓN", na.label = "INCOMPLETO EN PREP") 
